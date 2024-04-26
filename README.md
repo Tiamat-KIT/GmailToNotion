@@ -1,0 +1,2 @@
+# GmailToNotion
+GmailできたメールをNotionでまとめます
