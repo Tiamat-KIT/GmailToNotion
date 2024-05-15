@@ -1,6 +1,6 @@
 import NextAuth from "next-auth"
 import Google from "next-auth/providers/google"
-import { env } from "@/env"
+import { env } from "./env.d"
 
 export const {handlers,signIn,signOut,auth} = NextAuth({
     secret: env.AUTH_SECRET,

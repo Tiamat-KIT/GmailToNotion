@@ -1,5 +1,6 @@
 import {auth} from "@/auth";
 import {google, calendar_v3} from 'googleapis'
+import { env } from "../../env.d";
 import Calendar = calendar_v3.Calendar
 
 
@@ -10,10 +11,10 @@ export default async function Page() {
 
     // Google OAuthへの接続
     const oauth2Client = new google.auth.OAuth2({
-        clientId: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        clientId: env.AUTH_GOOGLE_ID,
+        clientSecret: env.AUTH_GOOGLE_SECRET,
 	// GCPコンソールで設定したredirect URI
-        redirectUri: 'http://localhost:3000/google-calendar'
+        redirectUri: `${process.env.NEXT_PUBLIC_VERCEL_URL}/google-calendar`
     })
     
     const accessToken = user?.accessToken // Googleが払い出したアクセストークン
