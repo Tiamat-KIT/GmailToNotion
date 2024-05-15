@@ -7,7 +7,7 @@ export default function SignIn() {
       action={async () => {
         "use server"
         await signIn("google",{
-          redirectTo: `${process.env.NEXT_PUBLIC_VERCEL_URL}/google-calender`
+          redirectTo: `/google-calender`
         })
       }}
     >
