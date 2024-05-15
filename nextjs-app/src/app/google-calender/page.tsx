@@ -46,6 +46,9 @@ export default async function Page() {
         >
             <div>
                 <div>よしなにレンダリング。calendarResponse.data</div>
+                {calendarResponse.data.items?.map((data) => {
+                    return <div>{data.summary}</div>
+                })}
             </div>
         </main>
     );
