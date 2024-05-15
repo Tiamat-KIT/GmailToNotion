@@ -36,9 +36,9 @@ function getLabeledMailData(labelName) {
 }
 
 function getNotionData() {
-  const database_id = '12fc69304b824a6ebac219d4e3f323ee';
+  const database_id = '[database_id]';
   const url = 'https://api.notion.com/v1/databases/' + database_id + '/query';
-  const token = 'secret_bwLbcWJK6mv6ZnhkH8nWGGh1iRej5rgHfnXqQd5Iu95';
+  const token = 'secret_***';
 
   let headers = {
     'content-type': 'application/json; charset=UTF-8',
@@ -86,9 +86,9 @@ function main(){
 }
 
 function Notion_Post(Mail,label){
-  const database_id = '12fc69304b824a6ebac219d4e3f323ee';
-  const url = 'https://api.notion.com/v1/pages';
-  const token = 'secret_bwLbcWJK6mv6ZnhkH8nWGGh1iRej5rgHfnXqQd5Iu95';
+  const database_id = '[database_id]';
+  const url = 'https://api.notion.com/v1/databases/' + database_id + '/query';
+  const token = 'secret_***';
   const json_data = {
       "parent": { "database_id": database_id},
       "properties":{
