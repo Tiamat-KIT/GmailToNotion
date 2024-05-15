@@ -33,7 +33,15 @@ export default async function Page() {
     // カレンダー一覧を取得
     const calendarResponse = await calendar.calendarList.list()
 
-    console.log(calendarResponse.data)
+    const AwaitYotei = calendarResponse.data.items?.map((data) => {
+        return calendar.calendars.get({
+            calendarId: data.id!
+        })
+    })
+
+    const Yotei = await Promise.all(AwaitYotei!.map(async(data) => {
+        return (await data).data
+    }))
 
     return (
         <main
@@ -45,9 +53,14 @@ export default async function Page() {
             }}
         >
             <div>
-                <div>よしなにレンダリング。calendarResponse.data</div>
+                {/* <div>よしなにレンダリング。calendarResponse.data</div>
                 {calendarResponse.data.items?.map((data) => {
                     return <div key={data.id}>{data.summary}</div>
+                })} */}
+                {Yotei.map((data) => {
+                    return (
+                        <div key={data.id}>{data.summary}</div>
+                    )
                 })}
             </div>
         </main>
