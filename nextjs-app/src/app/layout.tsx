@@ -16,7 +16,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className="p-3">
+          <nav>
+            <h1 className="text-3xl font-bold text-center">Getting Mail to Notion LabelFilter</h1>
+          </nav>
+        </header>
+        {children}
+      </body>
     </html>
   );
 }

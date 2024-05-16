@@ -6,6 +6,7 @@ export const env = createEnv({
     client: {
         AUTH_SECRET: z.string({required_error: "データの秘匿を行うための文字列が定義されていません"}),
         AUTH_GOOGLE_ID: z.string({required_error: "GOOGLE_IDが定義されていません"}),
-        AUTH_GOOGLE_SECRET: z.string({required_error: "GOOGLE_SECRETが定義されていません"}) 
+        AUTH_GOOGLE_SECRET: z.string({required_error: "GOOGLE_SECRETが定義されていません"}),
+        // NEXT_PUBLIC_VERCEL_URL: z.string({required_error: "オリジン指定がされていません"})
     }
 })

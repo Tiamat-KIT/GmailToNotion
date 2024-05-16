@@ -14,7 +14,7 @@ export default async function Page() {
         clientId: env.AUTH_GOOGLE_ID,
         clientSecret: env.AUTH_GOOGLE_SECRET,
 	// GCPコンソールで設定したredirect URI
-        redirectUri: `${process.env.NEXT_PUBLIC_VERCEL_URL}/google-calendar`
+        redirectUri: `${process.env.NODE_ENV === "development" ? "http://localhost:3000" : process.env.NEXT_PUBLIC_VERCEL_URL}/google-calendar`
     })
     
     const accessToken = user?.accessToken // Googleが払い出したアクセストークン
